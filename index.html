@@ -879,7 +879,7 @@ label.fld input,label.fld select,label.fld textarea{font-weight:600;color:var(--
 <div class="chart-tip" id="chartTip"></div>
 <div class="dev-float no-print" id="devFloat" title="المطور">
   <div class="df-ico">خ</div>
-  <span>الحفظ والتطوير: <b>خالد مسفر العجمي</b></span>
+  <spa اعداد وتطوير: <b>خالد مسفر العجمي</b></span>
 </div>
 <button class="fab no-print" id="fab" title="إضافة موظف"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
 <div class="print-area" id="printArea"></div>
@@ -1552,7 +1552,7 @@ function exportWord(list){
     '<h1>قسم التموين — إدارة المستودعات</h1><div>عدد السجلات: '+list.length+' — التاريخ: '+new Date().toLocaleDateString('ar-EG')+'</div>'+
     '<table><thead><tr>'+HEAD.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+
     rowsFor(list).map(r=>'<tr>'+r.map(c=>'<td>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table>'+
-    '<p style="margin-top:14px;font-size:11px">الحفظ والتطوير: الموظف / خالد مسفر العجمي</p></body></html>';
+    '<p style="margin-top:14px;font-size:11px">اعداد وتطوير: الموظف / خالد مسفر العجمي</p></body></html>';
   dl('تقرير_المستودعات.doc',html,'application/msword');
   toast('تم تصدير ملف Word');
 }
@@ -1589,7 +1589,7 @@ function printCard(e){
   '<table><tbody>'+
   [['الاسم',e.name],['رقم الكمبيوتر',e.computer_no],['رقم الهوية',e.national_id],['رقم الجوال',e.mobile],['المسمى الوظيفي',e.job_title],['المؤهل',e.qualification],['التخصص',e.specialization],['القسم',e.department],['الإدارة',e.administration],['المستودعات',w.map(whLabel).join(' / ')],['الأصناف',w.map(whItems).filter(Boolean).join(' | ')]]
   .map(r=>'<tr><th style="width:180px">'+r[0]+'</th><td>'+esc(r[1]||'—')+'</td></tr>').join('')+
-  '</tbody></table><div class="sig"><div>إعداد: خالد مسفر العجمي</div><div>التوقيع: ..........................</div></div>';
+  '</tbody></table><div class="sig"><div>إعداد: خالد مسفر العجمي</div>
   requestAnimationFrame(()=>setTimeout(()=>window.print(),90));
 }
 function parseWh(code){
